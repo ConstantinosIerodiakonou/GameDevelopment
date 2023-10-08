@@ -1,0 +1,25 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class teleporter : MonoBehaviour
+{
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+    public Transform LocationToGo; // Creating the public Transform variable LocationToGo
+    public Transform ObjectToMove;// Creating the public Transform variable ObjectToMove
+    void OnTriggerEnter(Collider other) // Creating the OnTriggerEnter method that will run once Triggered
+    {
+        ObjectToMove.transform.position = LocationToGo.transform.position;  // Moves the object from one location to another
+    }
+
+}
