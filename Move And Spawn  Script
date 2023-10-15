@@ -7,23 +7,23 @@ private int z = -1;
 private bool stop = false;
 void OnTriggerEnter(Collider other)
     {
-        if (stop == false)
+        if (stop == false)  // Using a Boolean value to force the script to stop
         {
-            for (int i = 1; i <= 3; i++)
+            for (int i = 1; i <= 3; i++) / Repeating 3 times
             {
                 Instantiate(myPrefab, Location.transform.position, Quaternion.identity);
             }
-             Instantiate(block, new Vector3(x, y, z), Quaternion.identity);
-            X=x+1;
-            if (x == 5)
+             Instantiate(block, new Vector3(x, y, z), Quaternion.identity);  // Instantiating
+            x=x+1;  // Adding 1 on X each time
+            if (x == 5)  // Checking if X is 5
             {
-                x = -5;
-                y=y+1;
-                if (y == 10)
+                x = -5; // Setting x to -5
+                y=y+1; // Adding 1 on Y each time
+                if (y == 10) // Checking if Y is 10
                 {
-                    stop = true;
+                    stop = true;  // Setting the boolean value Stop to True
                 }
             }
         }
-    Destroy(other.gameObject);
+    Destroy(other.gameObject); // Destroying the object that touched the trigger.
     }
