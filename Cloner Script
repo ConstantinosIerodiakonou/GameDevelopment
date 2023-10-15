@@ -1,24 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class Teleporter : MonoBehaviour
+public class Cloner : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Start()
-    {
-        
+    {    
     }
-
-    // Update is called once per frame
     void Update()
     {
-        
     }
-    public Transform LocationToGo;
-    public Transform ObjectToMove;
+
+    public GameObject myPrefab;
+    public Transform Location;
+
     void OnTriggerEnter(Collider other)
     {
-        ObjectToMove.transform.position = LocationToGo.transform.position; 
+        Instantiate(myPrefab, Location.transform.position, Quaternion.identity);  //Instantiating the object at the location of the object Tranform
+        Destroy(other.gameObject);  // Destroying the object
     }
+
 }
+
