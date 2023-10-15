@@ -6,7 +6,7 @@ public class FireProjectile : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1")) // Fire1 here may need to be setup in the Preferences Menu
         {
             Rigidbody p = Instantiate(projectile, transform.position, transform.rotation);
             p.velocity = transform.forward * speed;
