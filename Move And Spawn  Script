@@ -1,0 +1,29 @@
+public GameObject block;
+public GameObject myPrefab;
+public Transform Location;
+private int y = 0;
+private int x =-5;
+private int z = -1;
+private bool stop = false;
+void OnTriggerEnter(Collider other)
+    {
+        if (stop == false)
+        {
+            for (int i = 1; i <= 3; i++)
+            {
+                Instantiate(myPrefab, Location.transform.position, Quaternion.identity);
+            }
+             Instantiate(block, new Vector3(x, y, z), Quaternion.identity);
+            X=x+1;
+            if (x == 5)
+            {
+                x = -5;
+                y=y+1;
+                if (y == 10)
+                {
+                    stop = true;
+                }
+            }
+        }
+    Destroy(other.gameObject);
+    }
