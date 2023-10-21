@@ -1,0 +1,18 @@
+public class Clicked : MonoBehaviour
+{
+    // Start is called before the first frame update
+    private Animation anim;    // Declaring a variable anim to be a Animation
+    void Start()
+    {
+        anim = gameObject.GetComponent<Animation>();    // Setting anim to the Game Objects animation component
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))     // Checking if a key is pressed
+        {
+            anim.Play("MyFirstAnimation");      // Playing the animation
+        }
+    }
+}
