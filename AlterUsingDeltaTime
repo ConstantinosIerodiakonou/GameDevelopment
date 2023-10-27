@@ -1,0 +1,16 @@
+using UnityEngine;
+using System.Collections;
+
+public class AlterUsingDeltaTime : MonoBehaviour
+{
+    public float countdown = 3.0f; // Creating a float variable
+    void Start()
+    {
+
+    }
+
+    void Update()
+    {
+        countdown = countdown + Time.deltaTime;   // Adding a float variable with a DeltaTime
+    } 
+}
