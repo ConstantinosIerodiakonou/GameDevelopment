@@ -1,0 +1,15 @@
+using UnityEngine;
+using System.Collections;
+
+public class UsingDeltaTime : MonoBehaviour
+{
+    public float speed = 8.0f; 
+    
+    void Update ()
+    {
+         if(Input.GetKey(KeyCode.RightArrow)) //Checking for Key press
+      {
+ 	   transform.position = transform.position + new Vector3(speed * Time.deltaTime, 0.0f, 0.0f);  //adding on the transform position a new location using deltaTime
+      }
+    }   
+}
