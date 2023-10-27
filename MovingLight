@@ -1,0 +1,27 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MovingLight : MonoBehaviour
+{
+    private Transform myTransform;
+    public GameObject myobject;
+
+    void Start()
+    {
+        myTransform = myobject.GetComponent<Transform>();  // Getting the Transform component 
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.S))                  //Waiting for a key to be pressed
+        {
+            myobject.transform.Translate(0, 0.1f, 0);  //Changing the transform by 0.1 on the Y axis
+        }
+        else if (Input.GetKeyUp(KeyCode.W))
+        {
+            myobject.transform.Translate(0, -0.1f, 0);
+        }
+    }
+
+}
