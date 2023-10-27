@@ -1,0 +1,21 @@
+using UnityEngine;
+using System.Collections;
+
+public class EnableComponents : MonoBehaviour
+{
+    private Light myLight; // Creating a Light variable named myLight
+    
+    void Start ()
+    {
+        myLight = GetComponent<Light>();    //Getting the Light component information and storing it in my variable
+    }
+    
+    
+    void Update ()
+    {
+        if(Input.GetKeyUp(KeyCode.Space))    //Checking for keypress
+        {
+            myLight.enabled = !myLight.enabled;      //Disabling the light
+        }
+    }
+}
