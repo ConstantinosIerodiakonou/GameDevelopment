@@ -1,0 +1,13 @@
+using UnityEngine;
+using System.Collections;
+
+public class CheckState : MonoBehaviour
+{
+    public GameObject myObject;
+    
+    void Start ()
+    {
+        Debug.Log("Active Self: " + myObject.activeSelf);              //Showing myObject information about being Active on the console.
+        Debug.Log("Active in Hierarchy" + myObject.activeInHierarchy); //Showing myObject information about being Active in Hierachy on the console.
+  }
+}
