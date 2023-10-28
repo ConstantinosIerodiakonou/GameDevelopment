@@ -1,0 +1,17 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class GlobalValueHolder : MonoBehaviour
+{
+    public static int GlobalScore;  // Creating a Global integer variable called GlobalScore
+    public int ShowScore;           //Creating a integer variable
+    void Start()
+    {
+
+    }
+    void Update()
+    {
+        ShowScore = GlobalScore;    // Assiging the value of GlobalScore variable into ShowScore
+    }
+}
