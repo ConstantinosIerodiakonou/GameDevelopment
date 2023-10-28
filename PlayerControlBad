@@ -1,4 +1,4 @@
-public class PlayerControl : MonoBehaviour
+public class PlayerControlBad : MonoBehaviour
 {
     public GameObject projectile;      //Creating a GameObject for our projectile
     public float launchVelocity = 500f; //Creating necessary variables for Player
