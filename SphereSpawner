@@ -1,0 +1,15 @@
+public class SphereSpawner  : MonoBehaviour
+{
+    public GameObject SphereObject;  //Creating a GameObject named SphereObject
+    public Transform Location;      //Creating a Transform variable named Location
+
+    void Start()
+    {
+        GameObject sphere = Instantiate(SphereObject, Location.transform.position, transform.rotation); //Instantiating a SphereObject at Location Transform
+        //Adding a force towards between the values -350 and 350 for x,y and z
+        sphere.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(Random.Range(-350.0f, 350.0f), Random.Range(-350.0f, 350.0f), Random.Range(-350.0f, 350.0f)));
+
+        Destroy(sphere, 60);  //Destroying the Sphere in 60sec
+    }
+
+}
