@@ -1,0 +1,25 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class hit : MonoBehaviour        // Name of Class and : MonoBehavior. All Unity default scripts are MonoBehavior
+{
+    private GameObject SphereObject;    //Creating a GameObject variable named SphereObject
+    private Transform Location;         //Creating a Transform variable named Location
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Bullet")   //Checking a gameObject's Tag
+        {
+            SphereObject = gameObject;          // Assigining the object that has that Tag to the variable SphereObject
+            Location = SphereSpawner.GlobalLocation;    //Getting the value of the Global variable GlobalLocation from the script SphereSpawner 
+            Destroy(other);                 //Destroying the object that triggered the collider
+            Destroy(gameObject);            //Destroying the game object
+            GlobalValueHolder.GlobalScore = GlobalValueHolder.GlobalScore + 1;  //Incrementing the global counter GlobalLocation by 1
+            for (int i = 1; i <= GlobalValueHolder.GlobalScore; i++)        // Creating a Loop that will iterate GlobalScore times
+            {
+                SphereSpawner.Generator(SphereObject, Location);            //Calling the Generator method in the SphereSpawner script
+            }
+        }
+    }
+
+}
