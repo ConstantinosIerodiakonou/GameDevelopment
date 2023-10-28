@@ -1,0 +1,32 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class SphereSpawner : MonoBehaviour
+{
+    public GameObject SphereObject;     //Creating a GameObject variable with name SphereObject
+    public Transform Location;          //Creating a Transform variable with the name Location
+    public static Transform GlobalLocation;//Creating a Global Transform variable with the name GlobalLocation
+
+    public void ClickedStart()      //Creating a method called Clicked Start
+    {
+        GameObject sphere = Instantiate(SphereObject, Location.transform.position, transform.rotation);  //Instantiating a Gameobject
+        sphere.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(Random.Range(-350.0f, 350.0f), Random.Range(-350.0f, 350.0f), Random.Range(-350.0f, 350.0f))); // Adding a force
+        Destroy(sphere, 60); //Destroying the object
+        GlobalLocation = Location; // Setting Location values to GlobalLocation variable
+    }
+
+    void Start()
+    {
+    }
+    void Update()
+    {
+    }
+    public static void generator(GameObject SphereObject, Transform Location)  // Creating a global method called generator
+    {
+        GameObject sphere = Instantiate(SphereObject, Location.transform.position, Location.transform.rotation); //Instantiating a Gameobject
+        sphere.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(Random.Range(-350.0f, 350.0f), Random.Range(-350.0f, 350.0f), Random.Range(-350.0f, 350.0f)));// Adding a force
+        Destroy(sphere, 60);//Destroying the object
+    }
+}
+
