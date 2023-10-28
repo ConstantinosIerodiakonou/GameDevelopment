@@ -1,0 +1,23 @@
+public class PlayerControl : MonoBehaviour
+{
+    public float moveSpeed = 10f;
+    public float turnSpeed = 50f;
+
+    void Start()
+    {
+
+    }
+
+    void Update()
+    {
+        if (Input.GetKey(KeyCode.LeftArrow)) //Checking for Key press
+        {
+            transform.Rotate(Vector3.up, -turnSpeed * Time.deltaTime); // Turning when key is pressed Left
+        }
+        if (Input.GetKey(KeyCode.RightArrow)) //Checking for Key press
+        {
+            transform.Rotate(Vector3.up, turnSpeed * Time.deltaTime); // Turning when key is pressed Right
+        }
+    }
+
+}
