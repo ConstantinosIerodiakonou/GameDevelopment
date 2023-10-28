@@ -1,0 +1,21 @@
+public class Shooter : MonoBehaviour
+{
+    public GameObject projectile;
+    public float launchVelocity = 500f;
+    void Start()
+    {
+        
+    }
+    void LaunchProjectile()
+    {
+        GameObject ball = Instantiate(projectile, transform.position, transform.rotation);
+        ball.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(Random.Range(-50.0f, 50.0f), launchVelocity + Random.Range(-50.0f, 50.0f), Random.Range(-50.0f, 50.0f)));
+    }
+    void Update()
+    {
+                if (Input.GetButtonDown("Fire1"))                          //Checking for Mouse press
+        {
+            Invoke("LaunchProjectile", 0.1f);                    //Invoking the Launch Projectile method
+        }
+    }
+}
