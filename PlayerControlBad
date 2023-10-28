@@ -23,7 +23,7 @@ public class PlayerControlBad : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.RightArrow))                        //Checking for Key press
         {
-            transform.Rotate(Vector3.up, turnSpeed * Time.deltaTime);// Turning when key is pressed Left
+            transform.Rotate(Vector3.up, turnSpeed * Time.deltaTime);// Turning when key is pressed Right
         }
         if (Input.GetButtonDown("Fire1"))                          //Checking for Mouse press
         {
