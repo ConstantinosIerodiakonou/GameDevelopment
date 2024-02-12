@@ -1,0 +1,19 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class SoundScript : MonoBehaviour
+{
+    AudioSource MyAudioSource; // Create a variable for the audio that will be controlled with the slider
+
+    void Start()
+    {
+        MyAudioSource = GetComponent<AudioSource>();  // Getting the Audio component from the gameobject that has the sound
+        MyAudioSource.Play();                         // Playing the Audio file
+    }
+
+    public void changeVolume(float sliderValue)
+    {
+        MyAudioSource.volume = sliderValue;            // The function that we will call from the OnValueChanged on the Scroll Bar of the GUI to control the sound
+    }
+}
